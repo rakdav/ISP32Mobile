@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BarmenCalc</string>
+    <string name="number">Введите номер столика</string>
+    <string name="order">Заказать</string>
+    <string name="foot">Блюдо</string>
+    <string name="count">Количество</string>
+    <string name="price">цена</string>
+</resources>
