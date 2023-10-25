@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/number"
-        app:cardCornerRadius="30dp">
+        app:cardCornerRadius="20dp">
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
