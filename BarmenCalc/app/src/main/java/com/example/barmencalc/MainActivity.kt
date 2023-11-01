@@ -1,5 +1,6 @@
 package com.example.barmencalc
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.gson.Gson
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
@@ -51,11 +53,16 @@ class MainActivity : AppCompatActivity() {
             for (i in views)
             {
                 val name=(i.findViewById(R.id.foot) as EditText).text.toString()
-                val count=(i.findViewById(R.id.count) as EditText).text.toString().toUInt()
+                val count=(i.findViewById(R.id.count) as EditText).text.toString().toInt()
                 val price=(i.findViewById(R.id.price) as EditText).text.toString().toDouble()
                 var food:Food=Food(name,count,price)
                 foods.add(food)
             }
+            val intent:Intent= Intent(applicationContext,OrderActivity::class.java)
+            intent.putExtra("table_number",number.text.toString())
+            var ordersGson=Gson().toJson(foods)
+            intent.putExtra("orders",ordersGson)
+            startActivity(intent)
         })
     }
 }
