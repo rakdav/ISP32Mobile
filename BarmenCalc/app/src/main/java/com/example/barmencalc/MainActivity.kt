@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
             del.setOnClickListener(View.OnClickListener {
                 try {
                     (view.parent as LinearLayout).removeView(view)
+                    views.remove(view)
                 }
                 catch (ex:Exception)
                 {
