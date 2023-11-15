@@ -24,12 +24,12 @@ class ResultActivity : AppCompatActivity() {
         {
             var x=intent.getIntExtra("x",0)
             var y=intent.getIntExtra("y",0)
-            var op=intent.getIntExtra("op",0)
+            var op=intent.getCharExtra("op",'\u0000')
             when(op)
             {
-                1->res=x+y
-                2->res=x-y
-                3->res=x*y
+                '+'->res=x+y
+                '-'->res=x-y
+                '*'->res=x*y
             }
             first.text=(Random().nextInt(20)-10).toString();
             second.text=(Random().nextInt(20)-10).toString();
@@ -46,18 +46,21 @@ class ResultActivity : AppCompatActivity() {
                 var data=Intent()
                 data.putExtra("result",result)
                 setResult(RESULT_OK,data)
+                finish()
             }
             second.setOnClickListener {
                 if(position==2) result=true
                 var data=Intent()
                 data.putExtra("result",result)
                 setResult(RESULT_OK,data)
+                finish()
             }
             third.setOnClickListener {
                 if(position==3) result=true
                 var data=Intent()
                 data.putExtra("result",result)
                 setResult(RESULT_OK,data)
+                finish()
             }
 
         }

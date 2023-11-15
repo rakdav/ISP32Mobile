@@ -1,13 +1,18 @@
 package com.example.lifecycle
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import java.util.Random
 
 class MainActivity : AppCompatActivity() {
@@ -46,14 +51,22 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("y",y)
             when(op)
             {
-                '+'->intent.putExtra("op",1)
-                '-'->intent.putExtra("op",2)
-                '*'->intent.putExtra("op",3)
+                '+'->intent.putExtra("op",'+')
+                '-'->intent.putExtra("op",'-')
+                '*'->intent.putExtra("op",'*')
             }
-            startActivity(intent)
+            startForResult.launch(intent)
         }
     }
 
+    val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val intent = result.data
+            var res=intent!!.getBooleanExtra("result",false)
+            if(res) watch.setBackgroundColor(Color.GREEN)
+            else watch.setBackgroundColor(Color.RED)
+        }
+    }
     @SuppressLint("SetTextI18n")
     override fun onResume() {
         Toast.makeText(this,"onResume",Toast.LENGTH_SHORT).show()
