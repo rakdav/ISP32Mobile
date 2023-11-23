@@ -29,5 +29,10 @@ class MainActivity : AppCompatActivity() {
                 var2.text.toString().toInt())
             result.text=calculator.Add().toString()
         }
+        buttonSub.setOnClickListener {
+            var calculator:Calculator=Calculator(var1.text.toString().toInt(),
+                var2.text.toString().toInt())
+            result.text=calculator.Sub().toString()
+        }
     }
 }
