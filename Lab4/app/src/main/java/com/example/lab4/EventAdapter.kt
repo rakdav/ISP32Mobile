@@ -1,5 +1,6 @@
 package com.example.lab4
 
+import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,6 +25,7 @@ class EventAdapter(private val events:List<Event>): RecyclerView.Adapter<EventAd
         return events.size
     }
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
+        holder.image.setImageBitmap(events[position].path as Bitmap)
         holder.name.text = events[position].name
         holder.data.text = events[position].data.toString()
     }
