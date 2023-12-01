@@ -1,4 +1,4 @@
-package com.example.lab4
+package com.example.lab4.adapter
 
 import android.graphics.Bitmap
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lab4.R
+import com.example.lab4.model.Event
 
 class EventAdapter(private val events:List<Event>): RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
     class EventViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -1,4 +1,4 @@
-package com.example.lab4
+package com.example.lab4.model
 
 import android.net.Uri
 import java.util.Date
