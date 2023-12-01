@@ -16,13 +16,13 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
-        android:id="@+id/LoadImage"
+        android:id="@+id/btCamera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Load"
+        android:text="Camera"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.246"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ImageEvent" />
 
@@ -37,14 +37,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LoadImage" />
+        app:layout_constraintTop_toBottomOf="@+id/btCamera" />
 
-    <CalendarView
+    <DatePicker
         android:id="@+id/cvDateEvent"
         android:layout_width="0dp"
         android:layout_height="207dp"
-        android:layout_marginTop="16dp"
+        android:datePickerMode="spinner"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etEvent" />
 
@@ -70,4 +71,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etDescription"
         app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btGalary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Galary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintStart_toEndOf="@+id/btCamera"
+        app:layout_constraintTop_toBottomOf="@+id/ImageEvent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
